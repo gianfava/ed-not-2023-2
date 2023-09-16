@@ -1,3 +1,9 @@
+# Variáveis de estatística
+# divs ~> número de divisões
+# juncs ~> número de junções
+# comps ~> número de comparações
+divs = juncs = comps = 0
+
 def merge_sort(lista):
     """
         ALGORITMO DE ORDENAÇÃO MERGE SORT
@@ -8,6 +14,8 @@ def merge_sort(lista):
         usado a técnica de mesclagem (merging), "remonta" a
         lista, desta vez com os elementos já em ordem.
     """
+    global divs, juncs, comps
+
     # PARTE 1: DIVISÃO DA LISTA ORIGINAL EM LISTAS MENORES
 
     # Para que possa haver divisão da lista, esta deve ter
@@ -23,6 +31,8 @@ def merge_sort(lista):
         # Tira uma cópia da segunda metade da lista
         sublista_dir = lista[meio:]
 
+        divs += 1
+
         # Chamamos recursivamente a própria função para que ela
         # continue repartindo cada sublista em duas partes menores
         sublista_esq = merge_sort(sublista_esq)
@@ -37,6 +47,7 @@ def merge_sort(lista):
         # na lista ordenada o menor dentre dois elementos
         while pos_esq < len(sublista_esq) and pos_dir < len(sublista_dir):
             
+            comps += 1
             # O menor elemento está na sublista da esquerda
             if sublista_esq[pos_esq] < sublista_dir[pos_dir]:
                 # "Desce" o elemento da esquerda para a lista ordenada
@@ -57,6 +68,41 @@ def merge_sort(lista):
         # Sobra à direita
         else: sobra = sublista_dir[pos_dir:]
 
+        juncs += 1
+
         # O resultado final é a junção (concatenação) da lista
         # ordenada com a sobra
         return ordenada + sobra
+    
+    else:
+        return lista
+
+
+########################################################
+
+# nums = [7, 5, 9, 0, 3, 4, 8, 1, 6, 2]
+nums = [2, 8, 0, 7, 1, 9, 3, 6, 5, 4]
+
+divs = juncs = comps = 0
+nums_ord = merge_sort(nums)
+print(f"Lista original: {nums}")
+print(f"Lista ordenada: {nums_ord}")
+print(f"Divisões: {divs}, junções: {juncs}, comparações: {comps}")
+
+###################################################################
+# TESTE COM O ARQUIVO DE 1M+ NOMES
+
+import sys
+sys.dont_write_bytecode = True    # Impede a criação do cache
+
+# Importando a lista de nomes
+from data.nomes_desord import nomes
+from time import time
+
+divs = juncs = comps = 0
+hora_ini = time()
+nomes_ord = merge_sort(nomes)
+hora_fim = time()
+print(nomes_ord)     # Lista após ordenação
+print(f"Tempo gasto: {(hora_fim - hora_ini) * 1000}ms\n")
+print(f"Divisões: {divs}, junções: {juncs}, comparações: {comps}")
