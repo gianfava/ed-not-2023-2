@@ -11,7 +11,7 @@ def merge_sort(lista):
         No processo de ordenação, esse algoritmo "desmonta"
         a lista original, contendo N elementos, até obter
         N listas com apenas um elemento cada uma. Em seguida,
-        usado a técnica de mesclagem (merging), "remonta" a
+        usando a técnica de mesclagem (merging), "remonta" a
         lista, desta vez com os elementos já em ordem.
     """
     global divs, juncs, comps
@@ -92,7 +92,7 @@ print(f"Divisões: {divs}, junções: {juncs}, comparações: {comps}")
 ###################################################################
 # TESTE COM O ARQUIVO DE 1M+ NOMES
 
-import sys
+import sys, tracemalloc
 sys.dont_write_bytecode = True    # Impede a criação do cache
 
 # Importando a lista de nomes
@@ -100,9 +100,17 @@ from data.nomes_desord import nomes
 from time import time
 
 divs = juncs = comps = 0
+
+tracemalloc.start()     # Inicia a medição do consumo de memória
 hora_ini = time()
 nomes_ord = merge_sort(nomes)
 hora_fim = time()
+
+# Captura as informações do gasto de memória
+mem_atual, mem_pico = tracemalloc.get_traced_memory()
+tracemalloc.stop()      # Termina a medição do consumo de memória
+
 print(nomes_ord)     # Lista após ordenação
 print(f"Tempo gasto: {(hora_fim - hora_ini) * 1000}ms\n")
 print(f"Divisões: {divs}, junções: {juncs}, comparações: {comps}")
+print(f"Pico de memória: { mem_pico / 1024 / 1024 } MB")
