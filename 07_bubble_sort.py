@@ -51,23 +51,23 @@ bubble_sort(nums)
 print("DEPOIS: ", nums)
 print(f"Comparações: {comps}, trocas: {trocas}, passadas: {passd}")
 
-##############################################################################
-#fazendo a busca em um arquivo com 1 M+ nomes
-#Importando a lista de nomes
+# ##############################################################################
+# #fazendo a busca em um arquivo com 1 M+ nomes
+# #Importando a lista de nomes
 
-import sys
-sys.dont_write_bytecode = True #Impede a criação d cache
+# import sys
+# sys.dont_write_bytecode = True #Impede a criação d cache
 
-from data.nomes_desord import nomes
-from time import time
+# from data.nomes_desord import nomes
+# from time import time
 
-nomes1000 = nomes[:10000]
+# nomes1000 = nomes[:10000]
 
-hora_ini= time()
-pos1 = bubble_sort(nomes1000)
-hora_fim = time()
-print(nomes1000)
-print(f"Tempo Gasto: {(hora_fim-hora_ini) * 1000}ms\n")
+# hora_ini= time()
+# pos1 = bubble_sort(nomes1000)
+# hora_fim = time()
+# print(nomes1000)
+# print(f"Tempo Gasto: {(hora_fim-hora_ini) * 1000}ms\n")
 
 
 

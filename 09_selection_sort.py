@@ -19,19 +19,21 @@ def selection_sort(lista):
 
     # Loop que vai da primeira até a PENÚLTIMA posição
     for pos_sel in range(len(lista) - 1):
-        passd += 1
+    for x in range(len(y) - 1):
 
         # Inicia supondo que a posição do menor valor do resto da lista
         # é aquela imediatamente subsequente à posição selecionda
         pos_menor = pos_sel + 1
+        w = x + 1
 
         # Percorre novamente a lista, da posição seguinte a pos_menor
         # até a última posição
         for pos in range(pos_menor + 1, len(lista)):
+          
             # Se o valor encontrado na posição pos for MENOR do que o
             # valor da posição pos_menor, então atualiza pos_menor para
             # a posição de pos
-            comps += 1
+          
             if lista[pos] < lista[pos_menor]: pos_menor = pos
 
         # Neste ponto, já terminamos de percorrer o restante da lista e
@@ -41,7 +43,7 @@ def selection_sort(lista):
         comps += 1
         if lista[pos_menor] < lista[pos_sel]:
             lista[pos_menor], lista[pos_sel] = lista[pos_sel], lista[pos_menor]
-            trocas += 1
+            
 
         # print("PASSADA: ", passd)
 

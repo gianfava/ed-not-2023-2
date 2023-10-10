@@ -31,7 +31,7 @@ def fatorial_rec(num):
     if num < 0:
         raise Exception("ERRO: número negativo, cálculo impossível")
 
-    if num <=1:return 1 #O fatorila de 0 e 1 é igual a 1
+    if num <=1:return 1 # O fatorial de 0 e 1 é igual a 1
     else: return num * fatorial_rec(num-1)
 #################################################################
 

@@ -27,6 +27,6 @@ nums = [7, 8, 3, 2, 1, 4 ,6, 0, 5, 9]
 print('lista original: ', nums)
 a(nums)
 print('lista ordenada: ', nums)
-print('lista ordenada: ', (a(nums)))    
+ 
 
 #testado e funcionado.
