@@ -19,21 +19,35 @@ def selection_sort(lista):
 
     # Loop que vai da primeira até a PENÚLTIMA posição
     for pos_sel in range(len(lista) - 1):
+<<<<<<< HEAD
     for x in range(len(y) - 1):
+=======
+        passd += 1
+>>>>>>> bf396c8511a31d8f384ba0f6596bc7756ab7d6ae
 
         # Inicia supondo que a posição do menor valor do resto da lista
         # é aquela imediatamente subsequente à posição selecionda
         pos_menor = pos_sel + 1
+<<<<<<< HEAD
         w = x + 1
+=======
+>>>>>>> bf396c8511a31d8f384ba0f6596bc7756ab7d6ae
 
         # Percorre novamente a lista, da posição seguinte a pos_menor
         # até a última posição
         for pos in range(pos_menor + 1, len(lista)):
+<<<<<<< HEAD
           
             # Se o valor encontrado na posição pos for MENOR do que o
             # valor da posição pos_menor, então atualiza pos_menor para
             # a posição de pos
           
+=======
+            # Se o valor encontrado na posição pos for MENOR do que o
+            # valor da posição pos_menor, então atualiza pos_menor para
+            # a posição de pos
+            comps += 1
+>>>>>>> bf396c8511a31d8f384ba0f6596bc7756ab7d6ae
             if lista[pos] < lista[pos_menor]: pos_menor = pos
 
         # Neste ponto, já terminamos de percorrer o restante da lista e
@@ -43,19 +57,31 @@ def selection_sort(lista):
         comps += 1
         if lista[pos_menor] < lista[pos_sel]:
             lista[pos_menor], lista[pos_sel] = lista[pos_sel], lista[pos_menor]
+<<<<<<< HEAD
             
+=======
+            trocas += 1
+>>>>>>> bf396c8511a31d8f384ba0f6596bc7756ab7d6ae
 
         # print("PASSADA: ", passd)
 
 ##################################################################################
 
+<<<<<<< HEAD
 # nums = [7, 5, 9, 0, 3, 4, 8, 1, 6, 2]
+=======
+nums = [7, 5, 9, 0, 3, 4, 8, 1, 6, 2]
+>>>>>>> bf396c8511a31d8f384ba0f6596bc7756ab7d6ae
 
 # Melhor caso
 # nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # Pior caso
+<<<<<<< HEAD
 nums = nums = [9, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+=======
+# nums = nums = [9, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+>>>>>>> bf396c8511a31d8f384ba0f6596bc7756ab7d6ae
 
 print("ANTES:", nums)
 selection_sort(nums)
