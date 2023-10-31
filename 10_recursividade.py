@@ -21,7 +21,6 @@ def fatorial_iter(num):
 
     return resposta
 
-<<<<<<< HEAD
 ###########################################################
 
 def fatorial_rec(num):
@@ -38,22 +37,3 @@ def fatorial_rec(num):
 
 print(f"Fatorial de 6 (iterativo): {fatorial_iter(6)}")
 print(f"Fatorial de 6 (recursivo): {fatorial_rec(6)}")
-=======
-
-def fatorial_rec(num):
-    """
-        Cálculo do fatorial, usando um algoritmo RECURSIVO
-    """
-    # Não é possível calcular o fatorial de um número negativo
-    if num < 0:
-        raise Exception("ERRO: número negativo, cálculo impossível")
-    
-    if num <= 1: return 1       # O fatorial de 0 e 1 é igual a 1
-    else: return num * fatorial_rec(num - 1)    # Chamada recursiva à função
-
-###########################################################
-
-print(f"Fatorial de 6 (iterativo): {fatorial_iter(6)}")
-print(f"Fatorial de 6 (recursivo): {fatorial_rec(6)}")
-
->>>>>>> bf396c8511a31d8f384ba0f6596bc7756ab7d6ae
